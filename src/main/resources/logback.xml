@@ -1,0 +1,13 @@
+<configuration>
+    <appender name="KAFKA"
+              class="org.clojars.canawar.logback.KafkaAppender">
+        <topic>mytopic</topic>
+        <!-- <zookeeperHost>localhost:2181</zookeeperHost> -->
+        <brokerList>localhost:9092</brokerList>
+        <formatter class="org.clojars.canawar.logback.formatter.JsonFormatter"></formatter>
+    </appender>
+
+    <root level="debug">
+        <appender-ref ref="KAFKA" />
+    </root>
+</configuration>
